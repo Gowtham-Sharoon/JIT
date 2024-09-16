@@ -1,9 +1,79 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.14">
   <diagram name="Page-1" id="I9oMGGCVmff-xBgRGZVH">
-    <mxGraphModel>
+    <mxGraphModel dx="2100" dy="1126" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-61" value="Gi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="X4goSKu6BkFKF8S-UcI2-62">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="434" y="271" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="434" y="199" />
+              <mxPoint x="435" y="242" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-62" value="User" style="html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.user;" vertex="1" parent="1">
+          <mxGeometry x="373.5" y="154" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X4goSKu6BkFKF8S-UcI2-64" target="X4goSKu6BkFKF8S-UcI2-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-64" value="VPN Gateway" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpn_gateway;" vertex="1" parent="1">
+          <mxGeometry x="399" y="405" width="69" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-65" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.windows_server" vertex="1" parent="1">
+          <mxGeometry x="401.46" y="600" width="92.04" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-66" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/security/Azure_AD_Risky_Users.svg;" vertex="1" parent="1">
+          <mxGeometry x="128.5" y="861" width="104" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-67" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/security/Azure_AD_Risky_Users.svg;" vertex="1" parent="1">
+          <mxGeometry x="630" y="861" width="104" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="X4goSKu6BkFKF8S-UcI2-70">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170.1764993106617" y="843.8824606502758" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="X4goSKu6BkFKF8S-UcI2-70">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="678.4117934283088" y="846.7059110753678" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-70" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Windows AD Server in Cloud&lt;/font&gt;" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="338" y="724" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-71" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Group Policies (Policy Updated)&lt;/font&gt;" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="301" y="744" width="277" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="X4goSKu6BkFKF8S-UcI2-64">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="434" y="377" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="435" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-73" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Secure Connection&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="322.5" y="548" width="222" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X4goSKu6BkFKF8S-UcI2-75" target="X4goSKu6BkFKF8S-UcI2-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X4goSKu6BkFKF8S-UcI2-75" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Authentication Request&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;(Credentials)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="301" y="274" width="266" height="70" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 24px;&quot;&gt;Dummy AD User&lt;/font&gt;" placeholders="1" id="X4goSKu6BkFKF8S-UcI2-76">
+          <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
+            <mxGeometry x="54" y="965" width="253" height="55" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;font style=&quot;font-size: 24px;&quot;&gt;Dummy AD User&lt;/font&gt;" placeholders="1" id="X4goSKu6BkFKF8S-UcI2-77">
+          <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
+            <mxGeometry x="563" y="965" width="253" height="55" as="geometry" />
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>

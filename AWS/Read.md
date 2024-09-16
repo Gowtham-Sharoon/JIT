@@ -1,4 +1,5 @@
 AWS VPC CloudFormation Template
+
 This CloudFormation template creates network infrastructure for a standard AWS project:
 
 1 VPC

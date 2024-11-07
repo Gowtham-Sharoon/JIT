@@ -1,0 +1,144 @@
+provider "aws" {
+  region = "us-west-2"  # Specify your preferred region
+}
+
+# VPC
+resource "aws_vpc" "main_vpc" {
+  cidr_block           = "10.0.0.0/16"  # Change CIDR as needed
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  tags = {
+    Name = "MainVPC"  # Change VPC name
+  }
+}
+
+# Public Subnet
+resource "aws_subnet" "public_subnet" {
+  vpc_id                  = aws_vpc.main_vpc.id
+  cidr_block              = "10.0.1.0/24"  # Change CIDR as needed
+  map_public_ip_on_launch = true
+  availability_zone       = "us-west-2a"  # Change AZ if needed
+  tags = {
+    Name = "PublicSubnet"
+  }
+}
+
+# Private Subnet
+resource "aws_subnet" "private_subnet" {
+  vpc_id            = aws_vpc.main_vpc.id
+  cidr_block        = "10.0.2.0/24"  # Change CIDR as needed
+  availability_zone = "us-west-2a"  # Change AZ if needed
+  tags = {
+    Name = "PrivateSubnet"
+  }
+}
+
+# Internet Gateway for Public Subnet
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.main_vpc.id
+  tags = {
+    Name = "MainIGW"
+  }
+}
+
+# NAT Gateway for Private Subnet
+resource "aws_eip" "nat_eip" {
+  vpc = true
+}
+
+resource "aws_nat_gateway" "nat_gw" {
+  allocation_id = aws_eip.nat_eip.id
+  subnet_id     = aws_subnet.public_subnet.id
+  tags = {
+    Name = "MainNATGW"
+  }
+}
+
+# Public Route Table
+resource "aws_route_table" "public_rt" {
+  vpc_id = aws_vpc.main_vpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
+  tags = {
+    Name = "PublicRouteTable"
+  }
+}
+
+# Private Route Table
+resource "aws_route_table" "private_rt" {
+  vpc_id = aws_vpc.main_vpc.id
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat_gw.id
+  }
+  tags = {
+    Name = "PrivateRouteTable"
+  }
+}
+
+# Associate Public Subnet with Public Route Table
+resource "aws_route_table_association" "public_association" {
+  subnet_id      = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.public_rt.id
+}
+
+# Associate Private Subnet with Private Route Table
+resource "aws_route_table_association" "private_association" {
+  subnet_id      = aws_subnet.private_subnet.id
+  route_table_id = aws_route_table.private_rt.id
+}
+
+# Security Group for Public Instances (e.g., allowing SSH & HTTP)
+resource "aws_security_group" "public_sg" {
+  vpc_id = aws_vpc.main_vpc.id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  # Allow SSH from anywhere
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  # Allow HTTP from anywhere
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "PublicSG"
+  }
+}
+
+# Security Group for Private Instances (e.g., allowing only internal traffic)
+resource "aws_security_group" "private_sg" {
+  vpc_id = aws_vpc.main_vpc.id
+
+  ingress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = [aws_vpc.main_vpc.cidr_block]  # Allow all internal traffic
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "PrivateSG"
+  }
+}

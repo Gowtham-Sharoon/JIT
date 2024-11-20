@@ -1,0 +1,15 @@
+step1_account_name = "Sales"
+step2_account_number = "76328368712"
+step3_access_key = "hwbebcwuybecwu"
+step4_secret_key = "webuwvbyuwyvbecuwbecc"
+step5_region = "ap-south-1"
+step6_workload_type = "SAP"
+step7_vpc_name = "main"
+step8_vpc_cidr = "10.0.0.0/16"
+step9_public_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
+step10_private_subnet_cidrs = ["10.0.3.0/24", "10.0.4.0/24"]
+step11_vm_count = 2
+step12_vm_os = "Ubuntu"
+step13_vm_instance_type = "t2.micro"
+step14_vm_disk_size = 30
+step15_vm_elastic_ip_allocation = "yes"
